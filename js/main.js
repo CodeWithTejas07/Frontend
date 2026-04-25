@@ -180,6 +180,21 @@ function renderProducts(filter = 'all') {
 
 // Initial load
 loadPublicProducts();
+loadDiscordLink();
+
+async function loadDiscordLink() {
+  try {
+    const res = await fetch(`${API_BASE}/api/settings/discord_link`);
+    const data = await res.json();
+    if (data.success && data.value) {
+      if (window.DESACT_CONFIG) window.DESACT_CONFIG.DISCORD_INVITE = data.value;
+      // Update any direct links if they exist
+      document.querySelectorAll('a[href*="discord.gg"]').forEach(a => a.href = data.value);
+    }
+  } catch (err) {
+    console.error('Failed to load discord link:', err);
+  }
+}
 
 /* ── Filter tabs ── */
 document.getElementById('filterTabs').addEventListener('click', e => {

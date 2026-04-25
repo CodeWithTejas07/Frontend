@@ -53,6 +53,9 @@
         <button class="sidebar-btn" data-tab="apikeys" id="nav-apikeys">
           <span class="sb-icon">🔐</span> API Keys
         </button>
+        <button class="sidebar-btn" data-tab="settings" id="nav-settings">
+          <span class="sb-icon">⚙️</span> Settings
+        </button>
       </nav>
       <div class="sidebar-footer">
         <button class="sidebar-logout" id="logoutBtn">← Logout</button>
@@ -251,6 +254,22 @@
         <div style="margin-top:1.5rem;">
           <h3 class="section-label">Existing API Keys</h3>
           <div class="table-wrap" id="apiKeysTable">Loading...</div>
+        </div>
+      </div>
+      <!-- Tab: Settings -->
+      <div class="tab-pane hidden" id="tab-settings">
+        <div class="form-card">
+          <h3 class="form-title">Global Site Settings</h3>
+          <div class="form-group">
+            <label>Discord Invite Link</label>
+            <div style="display: flex; gap: 10px;">
+              <input type="text" id="setting-discord" placeholder="https://discord.gg/..." class="form-input">
+              <button class="btn-primary-sm" id="saveSettingsBtn">Save Link</button>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text3); margin-top: 8px;">
+              This link will be used across the site for "Contact to Buy" and support buttons.
+            </p>
+          </div>
         </div>
       </div>
 

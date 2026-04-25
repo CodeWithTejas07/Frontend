@@ -70,7 +70,7 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
 });
 
 /* ── Tab Navigation ── */
-const tabTitles = { overview: 'Overview', licenses: 'Licenses', generate: 'Manage Licenses', logs: 'Logs', apikeys: 'API Keys' };
+const tabTitles = { overview: 'Overview', licenses: 'Licenses', generate: 'Manage Licenses', logs: 'Logs', apikeys: 'API Keys', settings: 'Settings' };
 document.querySelectorAll('.sidebar-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const tab = btn.dataset.tab;
@@ -84,6 +84,7 @@ document.querySelectorAll('.sidebar-btn').forEach(btn => {
     if (tab === 'products') loadProducts();
     if (tab === 'logs') loadLogs();
     if (tab === 'apikeys') loadApiKeys();
+    if (tab === 'settings') loadSettings();
   });
 });
 
@@ -471,3 +472,32 @@ window.deleteProduct = async function(id) {
     showToast('✗ ' + e.message);
   }
 };
+
+/* ── Settings ── */
+window.loadSettings = async function() {
+  try {
+    const data = await apiFetch('/api/settings/discord_link');
+    if (data && data.success) {
+      document.getElementById('setting-discord').value = data.value || '';
+    }
+  } catch (e) {
+    showToast('✗ Failed to load settings');
+  }
+};
+
+document.getElementById('saveSettingsBtn').addEventListener('click', async () => {
+  const link = document.getElementById('setting-discord').value.trim();
+  try {
+    const data = await apiFetch('/api/settings/update', {
+      method: 'POST',
+      body: JSON.stringify({ key: 'discord_link', value: link })
+    });
+    if (data.success) {
+      showToast('✅ Settings updated!');
+      // Update the global config if it's currently loaded
+      if (window.DESACT_CONFIG) window.DESACT_CONFIG.DISCORD_INVITE = link;
+    }
+  } catch (e) {
+    showToast('✗ Failed to save settings');
+  }
+});
