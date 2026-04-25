@@ -10,7 +10,7 @@ window.DESACT_CONFIG = {
   API_BASE: 'https://backend-server-ajoc.onrender.com',
 
   // Your Discord invite / contact links
-  DISCORD_INVITE: 'https://discord.gg/yourlink',
+  DISCORD_INVITE: 'https://discord.gg/S7XD24C8b5',
 
   // Studio name
   STUDIO_NAME: 'Desact Studios',

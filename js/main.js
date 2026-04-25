@@ -85,28 +85,34 @@ if (checkBtn) {
 
             resultDiv.style.display = 'block';
             if (data.valid) {
-                resultDiv.style.background = 'rgba(34, 197, 94, 0.05)';
-                resultDiv.style.border = '1px solid rgba(34, 197, 94, 0.2)';
-                resultDiv.style.color = '#4ade80';
+                resultDiv.style.background = 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)';
+                resultDiv.style.border = '1px solid var(--border)';
+                resultDiv.style.color = 'var(--white)';
                 resultDiv.style.textAlign = 'left';
+                resultDiv.style.padding = '2.5rem';
+                resultDiv.style.borderRadius = '20px';
+                resultDiv.style.boxShadow = '0 0 30px rgba(99, 102, 241, 0.05)';
                 resultDiv.innerHTML = `
-                    <div style="font-weight:700; font-size: 1.25rem; margin-bottom: 1rem;">✓ Build Authenticity Verified</div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; font-family: var(--font-mono);">
-                        <div>
-                            <div style="color: var(--gray-400); margin-bottom: 0.25rem;">PRODUCT</div>
-                            <div style="color: var(--white)">${data.license.product_name}</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem;">
+                        <span style="font-weight: 800; font-size: 1.1rem; letter-spacing: 0.1em; color: var(--primary);">LICENSE VALIDATED</span>
+                        <span style="font-size: 0.8rem; color: var(--gray-400); font-family: var(--font-mono);">${new Date().toISOString().split('T')[0]}</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 0.95rem;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--gray-400)">Product</span>
+                            <span style="font-weight: 600">${data.license.product_name}</span>
                         </div>
-                        <div>
-                            <div style="color: var(--gray-400); margin-bottom: 0.25rem;">STATUS</div>
-                            <div style="color: var(--primary)">${data.license.status.toUpperCase()}</div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--gray-400)">Node IP</span>
+                            <span style="font-family: var(--font-mono); color: var(--primary)">${data.license.bound_ip || 'PENDING_BIND'}</span>
                         </div>
-                        <div>
-                            <div style="color: var(--gray-400); margin-bottom: 0.25rem;">BOUND IP</div>
-                            <div style="color: var(--white)">${data.license.bound_ip || 'Not Bound'}</div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--gray-400)">Status</span>
+                            <span style="color: #4ade80; font-weight: 700">ACTIVE</span>
                         </div>
-                        <div>
-                            <div style="color: var(--gray-400); margin-bottom: 0.25rem;">EXPIRY</div>
-                            <div style="color: var(--white)">${data.license.expires_at ? new Date(data.license.expires_at).toLocaleDateString() : 'LIFETIME'}</div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--gray-400)">Access</span>
+                            <span>${data.license.expires_at ? new Date(data.license.expires_at).toLocaleDateString() : 'LIFETIME'}</span>
                         </div>
                     </div>
                 `;
