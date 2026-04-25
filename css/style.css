@@ -449,7 +449,22 @@ footer {
 }
 
 /* Utilities */
-.hidden { display: none; }
+.hidden { display: none !important; }
+
+/* AI Chat Widget Enhancement */
+.chat-avatar {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 4px 10px var(--primary-glow);
+}
+
+.chat-trigger {
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes bounce-in {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
 
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.5rem; }

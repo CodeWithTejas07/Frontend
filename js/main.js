@@ -1,5 +1,5 @@
 // Desact Studios — Main Logic
-const API_BASE = window.DESACT_CONFIG ? window.DESACT_CONFIG.API_URL : 'https://backend-server-ajoc.onrender.com';
+const API_BASE = window.DESACT_CONFIG ? window.DESACT_CONFIG.API_BASE : 'https://backend-server-ajoc.onrender.com';
 
 // ── Product Loading ──
 async function loadPublicProducts() {
