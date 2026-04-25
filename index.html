@@ -24,6 +24,7 @@
       <div class="nav-links">
         <a href="#products" class="nav-link">Builds</a>
         <a href="#infrastructure" class="nav-link">Infrastructure</a>
+        <a href="#security" class="nav-link">Security</a>
         <a href="#checker" class="nav-link">Verify</a>
       </div>
       <a href="https://discord.gg/desact" id="discordLink" target="_blank" class="btn btn-secondary">
@@ -34,12 +35,12 @@
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="badge">Version 2.0 now live</div>
+    <div class="badge">Enterprise Infrastructure v2.0</div>
     <h1>Engineered for the <br> High-Player Era.</h1>
-    <p>Professional grade Minecraft infrastructure. Zero bloat, maximum performance, and cloud-synced security.</p>
+    <p>Professional grade Minecraft infrastructure. Zero bloat, maximum performance, and cloud-synced security for global networks.</p>
     <div style="display: flex; gap: 1rem; justify-content: center;">
       <a href="#products" class="btn btn-primary">Deploy Resources</a>
-      <a href="#infrastructure" class="btn btn-secondary">Our Stack</a>
+      <a href="#infrastructure" class="btn btn-secondary">System Architecture</a>
     </div>
   </header>
 
@@ -52,24 +53,77 @@
     
     <div class="bento-grid">
       <div class="bento-item bento-large">
+        <div class="bento-tag">Centralized</div>
         <h3>Cloud Management</h3>
-        <p>A unified license system that handles IP-locking, auto-resets, and claim management without leaving Discord.</p>
+        <p>A unified license system that handles IP-locking, auto-resets, and claim management without leaving Discord. Scalable to thousands of concurrent nodes.</p>
       </div>
       <div class="bento-item">
+        <div class="bento-tag">Performance</div>
         <h3>Async Core</h3>
-        <p>Every plugin is built with a focus on main-thread optimization.</p>
-      </div>
-      <div class="bento-item bento-tall">
-        <h3>Deep Security</h3>
-        <p>Our infrastructure uses brute-force protection and encrypted handshakes to ensure your code stays your code.</p>
+        <p>Every plugin is built with a focus on main-thread optimization using proprietary task-batching logic.</p>
       </div>
       <div class="bento-item">
-        <h3>API Driven</h3>
-        <p>Integrate your own webhooks or control panels with our REST API.</p>
+        <div class="bento-tag">API</div>
+        <h3>REST Gateway</h3>
+        <p>Integrate your own webhooks or control panels with our robust, documented REST API.</p>
       </div>
-      <div class="bento-item">
-        <h3>Expert Support</h3>
-        <p>Direct communication with the engineers who wrote the code.</p>
+      <div class="bento-item bento-large">
+        <div class="bento-tag">Global</div>
+        <h3>Cross-Version Protocol</h3>
+        <p>Support for 1.8.x through 1.20.x+ using modern packet handling techniques that ensure stability across all platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Security Section (UPGRADED) -->
+  <section class="section" id="security" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="security-layout">
+      <div class="security-info">
+        <div class="badge" style="color: var(--primary)">Shield Protection</div>
+        <h2 style="font-size: 3rem; margin: 1.5rem 0;">Deep <span style="color: var(--primary)">Security</span> Architecture</h2>
+        <p style="color: var(--gray-400); font-size: 1.1rem; margin-bottom: 2rem;">Our infrastructure uses multi-layered protection to ensure your code and server data stay private.</p>
+        
+        <div class="security-list">
+          <div class="sec-item">
+            <div class="sec-icon">🔒</div>
+            <div>
+              <h4>Encrypted Handshakes</h4>
+              <p>Every validation request is signed with a unique cryptographic token, preventing packet sniffing.</p>
+            </div>
+          </div>
+          <div class="sec-item">
+            <div class="sec-icon">🛑</div>
+            <div>
+              <h4>Brute-Force Shield</h4>
+              <p>Automatic IP-banning for repeated invalid license attempts across our entire network.</p>
+            </div>
+          </div>
+          <div class="sec-item">
+            <div class="sec-icon">📍</div>
+            <div>
+              <h4>Hardware ID Binding</h4>
+              <p>Licenses are locked to specific server instances, preventing unauthorized redistribution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="security-visual">
+        <!-- Technical Graphic Area -->
+        <div class="tech-card">
+          <div class="tc-header">
+            <div class="tc-dot red"></div>
+            <div class="tc-dot amber"></div>
+            <div class="tc-dot green"></div>
+            <span class="tc-title">security_kernel.log</span>
+          </div>
+          <div class="tc-body">
+            <div class="code-line"><span class="c-dim">[SEC]</span> Initiating Handshake...</div>
+            <div class="code-line"><span class="c-dim">[SEC]</span> RSA Key Exchange Verified</div>
+            <div class="code-line"><span class="c-dim">[SEC]</span> HWID Match: <span class="c-green">SUCCESS</span></div>
+            <div class="code-line"><span class="c-dim">[SEC]</span> Traffic: <span class="c-blue">Encrypted</span></div>
+            <div class="code-line cursor">_</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -78,16 +132,58 @@
   <section class="section" id="products">
     <div class="section-header">
       <h2>Available <span style="color: var(--primary)">Builds</span></h2>
+      <p>Ready-to-deploy resources for high-traffic environments.</p>
     </div>
     
     <div class="products-grid" id="productGrid">
-      <!-- Logic handles card injection -->
       <p style="color: var(--gray-400)">Synchronizing cloud builds...</p>
     </div>
   </section>
 
+  <!-- Development Tiers -->
+  <section class="section" id="tiers" style="border-top: 1px solid var(--border);">
+    <div class="section-header" style="text-align: center;">
+      <h2>Service <span style="color: var(--primary)">Tiers</span></h2>
+    </div>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <h3>Standard</h3>
+        <div class="price">Single Plugin</div>
+        <ul>
+          <li>✓ Core Performance</li>
+          <li>✓ Standard Updates</li>
+          <li>✓ Cloud Licensing</li>
+        </ul>
+        <a href="https://discord.gg/desact" class="btn btn-secondary" style="width: 100%">Inquire</a>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-badge">Recommended</div>
+        <h3>Professional</h3>
+        <div class="price">Network Suite</div>
+        <ul>
+          <li>✓ Multi-Instance Sync</li>
+          <li>✓ Priority Updates</li>
+          <li>✓ Custom API Access</li>
+          <li>✓ Discord Bot Integration</li>
+        </ul>
+        <a href="https://discord.gg/desact" class="btn btn-primary" style="width: 100%">Inquire</a>
+      </div>
+      <div class="tier-card">
+        <h3>Enterprise</h3>
+        <div class="price">Custom Core</div>
+        <ul>
+          <li>✓ Private Infrastructure</li>
+          <li>✓ 24/7 Direct Engineering</li>
+          <li>✓ Full Source Access</li>
+          <li>✓ Unlimited Resets</li>
+        </ul>
+        <a href="https://discord.gg/desact" class="btn btn-secondary" style="width: 100%">Inquire</a>
+      </div>
+    </div>
+  </section>
+
   <!-- License Checker -->
-  <section class="section" id="checker">
+  <section class="section" id="checker" style="background: rgba(255,255,255,0.01);">
     <div class="checker-wrap">
       <h2>Verify Build Authenticity</h2>
       <p>Check the cryptographically signed status of your license key.</p>
@@ -110,8 +206,9 @@
       <a href="admin.html" class="nav-link">Admin Dashboard</a>
       <a href="https://discord.gg/desact" class="nav-link">Developer Discord</a>
       <a href="#" class="nav-link">Documentation</a>
+      <a href="#" class="nav-link">Privacy</a>
     </div>
-    <p class="copyright">© 2024 Desact Engineering. Not affiliated with Mojang AB.</p>
+    <p class="copyright">© 2024 Desact Engineering. All rights reserved. <br> Built for performance.</p>
   </footer>
 
   <!-- AI Chat Widget -->

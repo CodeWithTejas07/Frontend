@@ -334,3 +334,155 @@ footer {
   .bento-large { grid-column: span 1; }
   .input-group { flex-direction: column; }
 }
+
+/* Bento Enhancements */
+.bento-tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Security Section UI */
+.security-layout {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.security-info { flex: 1; }
+.security-visual { flex: 1; display: flex; justify-content: center; }
+
+.security-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sec-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.sec-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.sec-item h4 { margin-bottom: 0.25rem; }
+.sec-item p { color: var(--gray-400); font-size: 0.9rem; }
+
+/* Tech Card (Code Visual) */
+.tech-card {
+  width: 100%;
+  max-width: 450px;
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  font-family: var(--font-mono);
+}
+
+.tc-header {
+  background: #1a1a1a;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tc-dot { width: 10px; height: 10px; border-radius: 50%; }
+.tc-dot.red { background: #ff5f56; }
+.tc-dot.amber { background: #ffbd2e; }
+.tc-dot.green { background: #27c93f; }
+.tc-title { color: var(--gray-400); font-size: 0.75rem; margin-left: 8px; }
+
+.tc-body { padding: 1.5rem; font-size: 0.85rem; line-height: 1.8; }
+.c-dim { color: var(--gray-700); }
+.c-green { color: #27c93f; }
+.c-blue { color: #6366f1; }
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: var(--primary);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Tiers Grid */
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tier-card {
+  background: var(--gray-900);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 3rem;
+  position: relative;
+  transition: all 0.3s var(--ease);
+}
+
+.tier-card:hover { border-color: var(--gray-400); transform: translateY(-5px); }
+
+.tier-card.featured {
+  border-color: var(--primary);
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.05) 0%, var(--gray-900) 100%);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+}
+
+.tier-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.tier-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.price { font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 2rem; }
+
+.tier-card ul { list-style: none; margin-bottom: 2.5rem; }
+.tier-card li { margin-bottom: 1rem; color: var(--gray-400); font-size: 0.9rem; }
+
+@media (max-width: 968px) {
+  .security-layout { flex-direction: column; gap: 3rem; }
+  .security-visual { width: 100%; }
+}
+
+/* Smooth Transitions for 3D */
+.product-card, .tier-card, .tech-card {
+  transition: transform 0.1s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* Ensure Chat Window is Scrollable */
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+}
