@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Desact Studios — Premium Minecraft Plugins & Server Setups. Buy, claim and manage licenses for professional server solutions.">
+    <title>Desact Studios — Premium Minecraft Plugins & Setups</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Canvas for Three.js -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⬡</span>
+                <span class="logo-text">Desact <span class="logo-accent">Studios</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#checker" class="nav-link">License Check</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="admin.html" class="nav-link nav-admin" target="_blank">Admin ↗</a></li>
+            </ul>
+            <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#checker">License Check</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="admin.html" target="_blank">Admin Panel</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Premium Minecraft Solutions
+            </div>
+            <h1 class="hero-title">
+                Build Your<br>
+                <span class="gradient-text">Dream Server</span><br>
+                With Desact
+            </h1>
+            <p class="hero-subtitle">
+                Professional-grade plugins and server setups, crafted for the best Minecraft experience. Secure licenses, instant delivery, lifetime support.
+            </p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary" id="hero-browse-btn">
+                    <span>Browse Products</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#checker" class="btn btn-ghost" id="hero-check-btn">
+                    <span>Check License</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value" data-count="50">0</div>
+                    <div class="stat-label">Plugins Sold</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-value" data-count="12">0</div>
+                    <div class="stat-label">Products</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-value" data-count="99">0</div>
+                    <div class="stat-label">% Uptime</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <div class="fc-icon">⚔️</div>
+                <div class="fc-label">FFA Plugin</div>
+                <div class="fc-sub">v2.1.0 • Active</div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="fc-icon">🛡️</div>
+                <div class="fc-label">License Valid</div>
+                <div class="fc-sub">✓ Bound to IP</div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="fc-icon">⚙️</div>
+                <div class="fc-label">Server Setup</div>
+                <div class="fc-sub">Premium Kit</div>
+            </div>
+            <div class="hero-orb"></div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">Our Products</div>
+                <h2 class="section-title">Premium <span class="gradient-text">Plugins & Setups</span></h2>
+                <p class="section-desc">Everything you need to run a professional Minecraft server. Each product comes with a secure license and full support.</p>
+            </div>
+
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="plugin">Plugins</button>
+                <button class="filter-tab" data-filter="setup">Setups</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Product Cards injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- License Checker Section -->
+    <section id="checker" class="checker-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">License Checker</div>
+                <h2 class="section-title">Check Your <span class="gradient-text">License Status</span></h2>
+                <p class="section-desc">Enter your license key to verify its status, expiry date and bound server IP.</p>
+            </div>
+            <div class="checker-card">
+                <div class="checker-input-group">
+                    <input type="text" id="licenseInput" class="checker-input" placeholder="e.g. FFA-XXXX-XXXX" autocomplete="off" spellcheck="false">
+                    <button class="btn btn-primary checker-btn" id="checkBtn">
+                        <span>Check</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    </button>
+                </div>
+                <div class="checker-result" id="checkerResult"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container about-grid">
+            <div class="about-content">
+                <div class="section-tag">About Us</div>
+                <h2 class="section-title">Built by Gamers,<br><span class="gradient-text">for Gamers</span></h2>
+                <p class="about-desc">
+                    Desact Studios is a passionate indie development team crafting high-quality Minecraft plugins and server setups. Every product is handcrafted with performance, security, and extensibility in mind.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <div>
+                            <div class="feature-title">Secure Licensing</div>
+                            <div class="feature-desc">IP-bound licenses with anti-abuse protection</div>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div>
+                            <div class="feature-title">Instant Delivery</div>
+                            <div class="feature-desc">Get your license key the moment you purchase</div>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛠️</div>
+                        <div>
+                            <div class="feature-title">Full Support</div>
+                            <div class="feature-desc">Discord support with fast response times</div>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔄</div>
+                        <div>
+                            <div class="feature-title">Regular Updates</div>
+                            <div class="feature-desc">Compatible with latest Minecraft versions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="about-card-stack">
+                    <div class="about-card ac-back">
+                        <div class="ac-glow"></div>
+                    </div>
+                    <div class="about-card ac-mid">
+                        <div class="ac-glow"></div>
+                    </div>
+                    <div class="about-card ac-front">
+                        <div class="ac-header">
+                            <span class="ac-dot green"></span>
+                            <span class="ac-dot yellow"></span>
+                            <span class="ac-dot red"></span>
+                        </div>
+                        <div class="ac-code">
+                            <span class="code-kw">plugin</span><span class="code-px">:</span> <span class="code-str">DesactFFA</span><br>
+                            <span class="code-kw">version</span><span class="code-px">:</span> <span class="code-num">2.1.0</span><br>
+                            <span class="code-kw">license</span><span class="code-px">:</span> <span class="code-str">FFA-A2B3-X9K1</span><br>
+                            <span class="code-kw">status</span><span class="code-px">:</span> <span class="code-green">✓ active</span><br>
+                            <span class="code-kw">bound_ip</span><span class="code-px">:</span> <span class="code-num">192.168.x.x</span><br>
+                            <span class="code-kw">expires</span><span class="code-px">:</span> <span class="code-str">lifetime</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-icon">⬡</span>
+                <span class="logo-text">Desact <span class="logo-accent">Studios</span></span>
+                <p>Premium Minecraft solutions.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <a href="#products">FFA Plugin</a>
+                    <a href="#products">Server Setups</a>
+                    <a href="#products">Coming Soon</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="#checker">License Check</a>
+                    <a href="admin.html">Admin Panel</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Desact Studios. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="productModal">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — Desact Studios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="login-logo">
+        <span class="logo-icon">⬡</span>
+        <span>Desact <span class="logo-accent">Studios</span></span>
+      </div>
+      <h2>Admin Panel</h2>
+      <p class="login-sub">Enter your API key to continue</p>
+      <div class="login-field">
+        <input type="password" id="apiKeyInput" placeholder="API Key" autocomplete="off">
+        <button id="loginBtn" class="btn-primary-sm">Login →</button>
+      </div>
+      <div id="loginError" class="login-error"></div>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="dashboard hidden">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-icon">⬡</span>
+        <span>Desact <span class="logo-accent">Studios</span></span>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="sidebar-btn active" data-tab="overview" id="nav-overview">
+          <span class="sb-icon">📊</span> Overview
+        </button>
+        <button class="sidebar-btn" data-tab="licenses" id="nav-licenses">
+          <span class="sb-icon">🔑</span> Licenses
+        </button>
+        <button class="sidebar-btn" data-tab="products" id="nav-products">
+          <span class="sb-icon">📦</span> Products
+        </button>
+        <button class="sidebar-btn" data-tab="generate" id="nav-generate">
+          <span class="sb-icon">✨</span> Generate
+        </button>
+        <button class="sidebar-btn" data-tab="logs" id="nav-logs">
+          <span class="sb-icon">📋</span> Logs
+        </button>
+        <button class="sidebar-btn" data-tab="apikeys" id="nav-apikeys">
+          <span class="sb-icon">🔐</span> API Keys
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="sidebar-logout" id="logoutBtn">← Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="dash-header">
+        <div>
+          <h1 class="dash-title" id="dashTitle">Overview</h1>
+          <p class="dash-sub" id="dashSub">Welcome back, Admin</p>
+        </div>
+        <div class="dash-header-right">
+          <div class="api-status" id="apiStatus">
+            <span class="status-dot"></span> Backend Connected
+          </div>
+          <a href="index.html" class="btn-outline-sm">← Site</a>
+        </div>
+      </header>
+
+      <!-- Tab: Overview -->
+      <div class="tab-pane active" id="tab-overview">
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <div class="stat-icon">🔑</div>
+            <div class="stat-num" id="s-total">—</div>
+            <div class="stat-lbl">Total Licenses</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-icon">✅</div>
+            <div class="stat-num" id="s-active">—</div>
+            <div class="stat-lbl">Active</div>
+          </div>
+          <div class="stat-card red">
+            <div class="stat-icon">🚫</div>
+            <div class="stat-num" id="s-revoked">—</div>
+            <div class="stat-lbl">Revoked</div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-icon">⏰</div>
+            <div class="stat-num" id="s-expired">—</div>
+            <div class="stat-lbl">Expired</div>
+          </div>
+          <div class="stat-card cyan">
+            <div class="stat-icon">📦</div>
+            <div class="stat-num" id="s-products">—</div>
+            <div class="stat-lbl">Products</div>
+          </div>
+        </div>
+        <div class="recent-section">
+          <h3 class="section-label">Recent Licenses</h3>
+          <div class="table-wrap" id="recentLicenses">Loading...</div>
+        </div>
+      </div>
+
+      <!-- Tab: Licenses -->
+      <div class="tab-pane hidden" id="tab-licenses">
+        <div class="toolbar">
+          <input type="text" id="licSearchInput" class="search-input" placeholder="Search key, product, IP...">
+          <button class="btn-primary-sm" onclick="loadLicenses()">🔄 Refresh</button>
+        </div>
+        <div class="table-wrap" id="licensesTable">Loading...</div>
+      </div>
+
+      <!-- Tab: Products -->
+      <div class="tab-pane hidden" id="tab-products">
+        <div class="form-card">
+          <h3 class="form-title" id="prod-form-title">Add New Product</h3>
+          <input type="hidden" id="prod-id">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Product Name</label>
+              <input type="text" id="prod-name" placeholder="e.g. Desact FFA" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Emoji</label>
+              <input type="text" id="prod-emoji" placeholder="⚔️" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Type</label>
+              <select id="prod-type" class="form-input">
+                <option value="plugin">Plugin</option>
+                <option value="setup">Setup</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Version</label>
+              <input type="text" id="prod-version" placeholder="1.0" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>MC Version</label>
+              <input type="text" id="prod-mc" placeholder="1.20+" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Buy Link (Discord)</label>
+              <input type="text" id="prod-link" placeholder="Discord Invite/Channel Link" class="form-input">
+            </div>
+            <div class="form-group" style="grid-column: span 2;">
+              <label>Description</label>
+              <textarea id="prod-desc" placeholder="Product description..." class="form-input" style="min-height: 80px;"></textarea>
+            </div>
+            <div class="form-group" style="grid-column: span 2;">
+              <label>Features (comma separated)</label>
+              <input type="text" id="prod-features" placeholder="Feature 1, Feature 2, ..." class="form-input">
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-top: 15px;">
+            <button class="btn-primary-sm" style="flex: 1; padding: 12px;" id="saveProductBtn">Save Product</button>
+            <button class="btn-outline-sm hidden" style="flex: 0.3;" id="cancelProdBtn">Cancel</button>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <h3 class="section-label">All Products</h3>
+          <div class="table-wrap" id="productsTable">Loading...</div>
+        </div>
+      </div>
+
+      <!-- Tab: Generate -->
+      <div class="tab-pane hidden" id="tab-generate">
+        <div class="form-card">
+          <h3 class="form-title">Generate New License</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Product Name</label>
+              <input type="text" id="gen-product" placeholder="e.g. FFA Plugin" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Duration (days or "lifetime")</label>
+              <input type="text" id="gen-days" placeholder="30 or lifetime" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Discord User ID (optional)</label>
+              <input type="text" id="gen-userid" placeholder="Leave blank if unclaimed" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Max IP Resets</label>
+              <input type="number" id="gen-resets" value="3" class="form-input">
+            </div>
+          </div>
+          <button class="btn-primary-full" id="generateBtn">✨ Generate License</button>
+          <div id="generateResult" class="gen-result"></div>
+        </div>
+        <div class="form-card" style="margin-top:1.5rem;">
+          <h3 class="form-title">Revoke License</h3>
+          <div class="form-group">
+            <label>License Key</label>
+            <input type="text" id="revoke-key" placeholder="FFA-XXXX-XXXX" class="form-input">
+          </div>
+          <button class="btn-danger-full" id="revokeBtn">🚫 Revoke License</button>
+          <div id="revokeResult" class="gen-result"></div>
+        </div>
+        <div class="form-card" style="margin-top:1.5rem;">
+          <h3 class="form-title">Reset IP for License</h3>
+          <div class="form-group">
+            <label>License Key</label>
+            <input type="text" id="reset-key" placeholder="FFA-XXXX-XXXX" class="form-input">
+          </div>
+          <button class="btn-outline-full" id="resetBtn">🔄 Reset IP</button>
+          <div id="resetResult" class="gen-result"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Logs -->
+      <div class="tab-pane hidden" id="tab-logs">
+        <div class="toolbar">
+          <input type="text" id="logSearchInput" class="search-input" placeholder="Search logs...">
+          <button class="btn-primary-sm" onclick="loadLogs()">🔄 Refresh</button>
+        </div>
+        <div class="table-wrap" id="logsTable">Loading...</div>
+      </div>
+
+      <!-- Tab: API Keys -->
+      <div class="tab-pane hidden" id="tab-apikeys">
+        <div class="form-card">
+          <h3 class="form-title">Create New API Key</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Label / Name</label>
+              <input type="text" id="ak-label" placeholder="e.g. Discord Bot" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Role</label>
+              <select id="ak-role" class="form-input">
+                <option value="admin">Admin</option>
+                <option value="plugin">Plugin</option>
+                <option value="readonly">Read Only</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-primary-full" id="createApiKeyBtn">🔐 Create API Key</button>
+          <div id="akResult" class="gen-result"></div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <h3 class="section-label">Existing API Keys</h3>
+          <div class="table-wrap" id="apiKeysTable">Loading...</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
