@@ -3,133 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desact Studios — Premium Minecraft Resources</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <title>Desact Studios — Professional Engineering</title>
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- Background Effects -->
-  <div class="bg-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
+  <div class="grid-bg"></div>
+  <div class="glow-overlay"></div>
 
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
-      <div class="logo-text">
-        <span style="color: var(--primary)">⬡</span>
-        <span>Desact <span class="logo-accent">Studios</span></span>
+      <div class="logo">
+        <span>⬡</span> DESACT
       </div>
       <div class="nav-links">
-        <a href="#products" class="nav-link">Products</a>
-        <a href="#features" class="nav-link">Features</a>
-        <a href="#checker" class="nav-link">Checker</a>
-        <a href="admin.html" class="nav-link">Admin</a>
+        <a href="#products" class="nav-link">Builds</a>
+        <a href="#infrastructure" class="nav-link">Infrastructure</a>
+        <a href="#checker" class="nav-link">Verify</a>
       </div>
-      <a href="https://discord.gg/desact" id="discordLink" target="_blank" class="btn btn-primary">
-        <span>Join Discord</span>
-        <span style="font-size: 1.1rem">→</span>
+      <a href="https://discord.gg/desact" id="discordLink" target="_blank" class="btn btn-secondary">
+        Contact Support
       </a>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="hero-tag">💎 Elite Resource Development</div>
-    <h1>The Gold Standard <br> for <span class="logo-accent">Minecraft</span> Networks.</h1>
-    <p>Empower your network with high-performance plugins, custom setups, and a rock-solid license management system.</p>
+    <div class="badge">Version 2.0 now live</div>
+    <h1>Engineered for the <br> High-Player Era.</h1>
+    <p>Professional grade Minecraft infrastructure. Zero bloat, maximum performance, and cloud-synced security.</p>
     <div style="display: flex; gap: 1rem; justify-content: center;">
-      <a href="#products" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1rem;">View Resources</a>
-      <a href="#features" class="btn btn-glass" style="padding: 1rem 2.5rem; font-size: 1rem;">Core Tech</a>
+      <a href="#products" class="btn btn-primary">Deploy Resources</a>
+      <a href="#infrastructure" class="btn btn-secondary">Our Stack</a>
     </div>
   </header>
 
-  <!-- Stats Bar -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-val">100+</div>
-      <div class="stat-lab">Global Servers</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val">1.2k+</div>
-      <div class="stat-lab">Licenses Sync</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val">24/7</div>
-      <div class="stat-lab">Live Support</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val">99.9%</div>
-      <div class="stat-lab">Cloud Uptime</div>
-    </div>
-  </div>
-
-  <!-- Why Choose Us -->
-  <section class="section" id="features">
-    <div class="section-header" style="text-align: center;">
-      <h2 class="section-title">Built for <span class="logo-accent">Excellence</span></h2>
-      <p class="section-sub">Industry-leading standards for every resource we release.</p>
+  <!-- Infrastructure (Bento Grid) -->
+  <section class="section" id="infrastructure">
+    <div class="section-header">
+      <h2>Infrastructure <span style="color: var(--primary)">Sync</span></h2>
+      <p>Secure, reliable, and scalable systems for global networks.</p>
     </div>
     
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feat-icon">⚡</div>
-        <h3>Ultra Speed</h3>
-        <p>Async operations and optimized code ensure zero impact on your server's TPS.</p>
+    <div class="bento-grid">
+      <div class="bento-item bento-large">
+        <h3>Cloud Management</h3>
+        <p>A unified license system that handles IP-locking, auto-resets, and claim management without leaving Discord.</p>
       </div>
-      <div class="feature-card">
-        <div class="feat-icon">🛡️</div>
-        <h3>Secure Sync</h3>
-        <p>Cloud-based license validation with IP-lock and brute-force protection.</p>
+      <div class="bento-item">
+        <h3>Async Core</h3>
+        <p>Every plugin is built with a focus on main-thread optimization.</p>
       </div>
-      <div class="feature-card">
-        <div class="feat-icon">🛠️</div>
-        <h3>Fully Configurable</h3>
-        <p>Every plugin comes with deep configuration files and placeholder support.</p>
+      <div class="bento-item bento-tall">
+        <h3>Deep Security</h3>
+        <p>Our infrastructure uses brute-force protection and encrypted handshakes to ensure your code stays your code.</p>
       </div>
-      <div class="feature-card">
-        <div class="feat-icon">💬</div>
-        <h3>Discord Integration</h3>
-        <p>Manage your licenses, resets, and claims directly through our custom Discord bot.</p>
+      <div class="bento-item">
+        <h3>API Driven</h3>
+        <p>Integrate your own webhooks or control panels with our REST API.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Process Section -->
-  <section class="section" id="process" style="background: rgba(0,0,0,0.2);">
-    <div class="section-header" style="text-align: center;">
-      <h2 class="section-title">Our <span class="logo-accent">Workflow</span></h2>
-      <p class="section-sub">The journey from idea to high-performance production code.</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <div class="step-icon">🔬</div>
-        <h4>Analysis</h4>
-        <p>Deep dive into server performance requirements.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <div class="step-icon">💻</div>
-        <h4>Development</h4>
-        <p>Clean, efficient, and modern Java 21+ code.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <div class="step-icon">🧪</div>
-        <h4>Quality Control</h4>
-        <p>Stress testing on high-player count environments.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <div class="step-icon">🚀</div>
-        <h4>Deployment</h4>
-        <p>Instant delivery with cloud-synced licenses.</p>
+      <div class="bento-item">
+        <h3>Expert Support</h3>
+        <p>Direct communication with the engineers who wrote the code.</p>
       </div>
     </div>
   </section>
@@ -137,132 +77,61 @@
   <!-- Products Section -->
   <section class="section" id="products">
     <div class="section-header">
-      <h2 class="section-title">Featured <span class="logo-accent">Resources</span></h2>
-      <p class="section-sub">Browse our collection of premium Minecraft plugins.</p>
+      <h2>Available <span style="color: var(--primary)">Builds</span></h2>
     </div>
     
     <div class="products-grid" id="productGrid">
-      <p style="text-align:center; grid-column: 1/-1; color: var(--text-dark);">Synchronizing with Desact Cloud...</p>
-    </div>
-  </section>
-
-  <!-- Tech Specs -->
-  <section class="section" style="background: rgba(255,255,255,0.01);">
-    <div class="section-header" style="text-align: center;">
-      <h2 class="section-title">Our <span class="logo-accent">Tech Stack</span></h2>
-      <p class="section-sub">We use only the most reliable and efficient technologies.</p>
-    </div>
-    <div class="tech-grid">
-      <div class="tech-tag"><div class="tech-dot"></div> Java 21+</div>
-      <div class="tech-tag"><div class="tech-dot"></div> Paper/Folia</div>
-      <div class="tech-tag"><div class="tech-dot"></div> SQLite/Redis</div>
-      <div class="tech-tag"><div class="tech-dot"></div> Discord.js</div>
-      <div class="tech-tag"><div class="tech-dot"></div> Node.js</div>
+      <!-- Logic handles card injection -->
+      <p style="color: var(--gray-400)">Synchronizing cloud builds...</p>
     </div>
   </section>
 
   <!-- License Checker -->
   <section class="section" id="checker">
     <div class="checker-wrap">
-      <div class="hero-tag" style="color: var(--secondary)">🔐 Authenticity Check</div>
-      <h2 class="section-title">Verify Your <span class="logo-accent">License</span></h2>
-      <p class="section-sub">Instantly verify that your license is genuine and active.</p>
+      <h2>Verify Build Authenticity</h2>
+      <p>Check the cryptographically signed status of your license key.</p>
       
       <div class="input-group">
-        <input type="text" id="licenseInput" class="input-main" placeholder="FFA-XXXX-XXXX">
-        <button id="checkBtn" class="btn btn-primary" style="padding: 0 2rem;">Verify License</button>
+        <input type="text" id="licenseInput" class="input-main" placeholder="LIC-XXXX-XXXX">
+        <button id="checkBtn" class="btn btn-primary">Verify Key</button>
       </div>
       
       <div id="checkResult" class="check-result"></div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section" id="faq">
-    <div class="section-header" style="text-align: center;">
-      <h2 class="section-title">Common <span class="logo-accent">Questions</span></h2>
-    </div>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h4>How do I claim my license?</h4>
-        <p>Join our Discord and use the <code>/claim</code> command with your key. It will instantly bind to your account.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Can I reset my IP?</h4>
-        <p>Yes, we allow up to 3 resets per license. You can do this through the Discord bot or our web portal.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Are updates free?</h4>
-        <p>All minor updates and bug fixes are free for the lifetime of the product version.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="section">
-    <div class="cta-card">
-      <h2>Join the <span class="logo-accent">Elite</span>.</h2>
-      <p>Connect with hundreds of server owners in our Discord community.</p>
-      <a href="https://discord.gg/desact" class="btn btn-primary" style="padding: 1.25rem 3rem; font-size: 1.1rem; margin-top: 2rem;">
-        Get Started Now
-      </a>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer>
-    <div class="footer-logo">
-      <div class="logo-text" style="justify-content: center; font-size: 2rem;">
-        <span style="color: var(--primary)">⬡</span>
-        <span>Desact <span class="logo-accent">Studios</span></span>
-      </div>
+    <div class="logo" style="justify-content: center; font-size: 1.5rem; margin-bottom: 2rem;">
+      <span>⬡</span> DESACT
     </div>
     <div class="footer-links">
-      <a href="#products" class="footer-link">Products</a>
-      <a href="#features" class="footer-link">Features</a>
-      <a href="https://discord.gg/desact" class="footer-link">Support</a>
-      <a href="admin.html" class="footer-link">Admin Portal</a>
+      <a href="admin.html" class="nav-link">Admin Dashboard</a>
+      <a href="https://discord.gg/desact" class="nav-link">Developer Discord</a>
+      <a href="#" class="nav-link">Documentation</a>
     </div>
-    <p class="copyright">© 2024 Desact Studios. All rights reserved. <br> High-Performance Minecraft Development.</p>
+    <p class="copyright">© 2024 Desact Engineering. Not affiliated with Mojang AB.</p>
   </footer>
 
   <!-- AI Chat Widget -->
   <div class="chat-widget" id="chatWidget">
     <div class="chat-trigger" id="chatTrigger">
-      <span class="chat-icon">💬</span>
-      <span class="chat-badge">AI</span>
+      <span style="font-size: 1.5rem">💬</span>
     </div>
     
     <div class="chat-window hidden" id="chatWindow">
       <div class="chat-header">
-        <div class="chat-header-info">
-          <div class="chat-avatar">⬡</div>
-          <div>
-            <div class="chat-title">Desact AI Support</div>
-            <div class="chat-status">Online • Agent Active</div>
-          </div>
-        </div>
-        <button class="chat-close" id="chatClose">×</button>
+        <div style="font-weight: 700">DESACT AI</div>
+        <button id="chatClose" style="background:transparent; border:none; color:#fff; cursor:pointer">×</button>
       </div>
-      
       <div class="chat-messages" id="chatMessages">
-        <div class="msg bot">
-          Hello! I'm the Desact Studios AI. How can I help you today?
+        <div style="background: var(--gray-800); padding: 0.75rem; border-radius: 8px; font-size: 0.875rem">
+          Infrastructure system online. How can I assist?
         </div>
       </div>
-      
       <div class="chat-input-area">
-        <div class="chat-quick-actions">
-          <button class="qa-btn" onclick="sendQuickMsg('How to buy?')">Purchase Help</button>
-          <button class="qa-btn" onclick="sendQuickMsg('IP Reset help')">IP Reset</button>
-        </div>
-        <div class="chat-input-wrap">
-          <input type="text" id="chatInput" placeholder="Type a message...">
-          <button id="sendChatBtn">✈️</button>
-        </div>
-        <div class="chat-footer">
-          Need a human? <a href="https://discord.gg/desact" target="_blank">Open a Ticket</a>
-        </div>
+        <input type="text" id="chatInput" placeholder="Ask a technical question..." style="width:100%; background:transparent; border:none; color:#fff; outline:none">
       </div>
     </div>
   </div>
