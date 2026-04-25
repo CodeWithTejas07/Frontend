@@ -2,6 +2,8 @@
 // DESACT STUDIOS — Main JS (Three.js bg + interactivity)
 // ============================================================
 
+const API_BASE = (window.DESACT_CONFIG && window.DESACT_CONFIG.API_BASE) || 'http://localhost:3000';
+
 /* ── Three.js Particle Background ── */
 (function initThree() {
   const canvas = document.getElementById('bg-canvas');
@@ -240,7 +242,6 @@ document.getElementById('modalOverlay').addEventListener('click', e => {
 });
 
 /* ── License Checker ── */
-const API_BASE = (window.DESACT_CONFIG && window.DESACT_CONFIG.API_BASE) || 'http://localhost:3000';
 
 document.getElementById('checkBtn').addEventListener('click', checkLicense);
 document.getElementById('licenseInput').addEventListener('keydown', e => {
