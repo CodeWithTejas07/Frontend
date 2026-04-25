@@ -177,6 +177,47 @@
     <p class="copyright">© 2024 Desact Studios. All rights reserved. <br> High-Performance Minecraft Development.</p>
   </footer>
 
+  <!-- AI Chat Widget -->
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-trigger" id="chatTrigger">
+      <span class="chat-icon">💬</span>
+      <span class="chat-badge">AI</span>
+    </div>
+    
+    <div class="chat-window hidden" id="chatWindow">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">⬡</div>
+          <div>
+            <div class="chat-title">Desact AI Support</div>
+            <div class="chat-status">Online • Responses in seconds</div>
+          </div>
+        </div>
+        <button class="chat-close" id="chatClose">×</button>
+      </div>
+      
+      <div class="chat-messages" id="chatMessages">
+        <div class="msg bot">
+          Hello! I'm the Desact Studios AI. How can I help you with our plugins today?
+        </div>
+      </div>
+      
+      <div class="chat-input-area">
+        <div class="chat-quick-actions">
+          <button class="qa-btn" onclick="sendQuickMsg('How to buy?')">How to buy?</button>
+          <button class="qa-btn" onclick="sendQuickMsg('IP Reset help')">IP Reset help</button>
+        </div>
+        <div class="chat-input-wrap">
+          <input type="text" id="chatInput" placeholder="Type your message...">
+          <button id="sendChatBtn">✈️</button>
+        </div>
+        <div class="chat-footer">
+          Need a human? <a href="https://discord.gg/desact" target="_blank">Open a Ticket</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -113,3 +113,57 @@ async function loadDiscordLink() {
 // Initial load
 loadPublicProducts();
 loadDiscordLink();
+
+// ── Chat Widget Logic ──
+const chatTrigger = document.getElementById('chatTrigger');
+const chatWindow = document.getElementById('chatWindow');
+const chatClose = document.getElementById('chatClose');
+const chatInput = document.getElementById('chatInput');
+const sendChatBtn = document.getElementById('sendChatBtn');
+const chatMessages = document.getElementById('chatMessages');
+
+chatTrigger.addEventListener('click', () => {
+    chatWindow.classList.toggle('hidden');
+});
+
+chatClose.addEventListener('click', () => {
+    chatWindow.classList.add('hidden');
+});
+
+function addMessage(text, side) {
+    const msg = document.createElement('div');
+    msg.className = `msg ${side}`;
+    msg.textContent = text;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+async function handleChat() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    addMessage(text, 'user');
+    chatInput.value = '';
+
+    // Mock AI Response (Can be replaced with actual API call)
+    setTimeout(() => {
+        const responses = [
+            "I'm here to help! You can check your license in the 'Checker' section or join our Discord for manual support.",
+            "Desact Studios plugins are optimized for 1.20+. Which plugin are you interested in?",
+            "If you're having IP reset issues, make sure you haven't exceeded your 3-reset limit.",
+            "Our Discord support team is online! Check the link at the bottom of this chat."
+        ];
+        const random = responses[Math.floor(Math.random() * responses.length)];
+        addMessage(random, 'bot');
+    }, 800);
+}
+
+sendChatBtn.addEventListener('click', handleChat);
+chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleChat();
+});
+
+function sendQuickMsg(text) {
+    chatInput.value = text;
+    handleChat();
+}
